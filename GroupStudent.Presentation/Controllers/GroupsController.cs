@@ -15,13 +15,13 @@ namespace GroupStudent.Presentation.Controllers
     {
         private readonly IServiceManager _service;
         public GroupsController(IServiceManager service) => _service = service;
-        [HttpGet("{id:guid}")]
-        public IActionResult GetGroup(Guid Id)
+        [HttpGet("/getgroupbyid/{id}")]
+        public IActionResult GetGroup(Guid id)
         {
             try
             {
                 var groups =
-                _service.GroupService.GetGroup(Id,trackChanges: false);
+                _service.GroupService.GetGroup(id,trackChanges: false);
                 return Ok(groups);
             }
             catch

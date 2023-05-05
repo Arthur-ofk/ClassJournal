@@ -29,7 +29,7 @@ namespace GroupStudent.Presentation.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-        [HttpGet]
+        [HttpGet("/getallgroups")]
         public IActionResult GetAllGroups()
         {
             try
@@ -44,7 +44,7 @@ namespace GroupStudent.Presentation.Controllers
             }
         }
         //[HttpGet("{id:guid}", Name = "GroupById")]
-        [HttpPost]
+        [HttpPost("/creategroup")]
         public IActionResult CreateGroup([FromBody] GroupForCreationDto group)
         {
             
@@ -52,22 +52,22 @@ namespace GroupStudent.Presentation.Controllers
             return Ok(createdGroup);
             
         }
-        [HttpGet("collection/({ids})", Name = "GroupCollection")]
-        public IActionResult GetGroupCollection(IEnumerable<Guid> ids)
-        {
-            var groups = _service.GroupService.GetByIds(ids, trackChanges: false);
-            return Ok(groups);
-        }
-        [HttpPost("collection")]
-        public IActionResult CreateGroupCollection([FromBody]
-             IEnumerable<GroupForCreationDto> companyCollection)
-        {
-            var result =
-            _service.GroupService.CreateGroupCollection(companyCollection);
-            return Ok(result);
+        //[HttpGet("collection/({ids})", Name = "GroupCollection")]
+        //public IActionResult GetGroupCollection(IEnumerable<Guid> ids)
+        //{
+        //    var groups = _service.GroupService.GetByIds(ids, trackChanges: false);
+        //    return Ok(groups);
+        //}
+        //[HttpPost("collection")]
+        //public IActionResult CreateGroupCollection([FromBody]
+        //     IEnumerable<GroupForCreationDto> companyCollection)
+        //{
+        //    var result =
+        //    _service.GroupService.CreateGroupCollection(companyCollection);
+        //    return Ok(result);
             
-        }
-        [HttpDelete("{id:guid}")]
+        //}
+        [HttpDelete("/deletegroup/{id:guid}")]
         public IActionResult DeleteGroup(Guid id )
         {
             _service.GroupService.DeleteGroup(id , trackChanges : false);

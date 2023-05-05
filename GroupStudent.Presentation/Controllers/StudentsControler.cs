@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GroupStudent.Presentation.Controllers
 {
-    [Route("api/groups/{GroupId}/students")]
+    [Route("api/groups/{groupId}/students")]
     [ApiController]
 
         
@@ -18,7 +18,7 @@ namespace GroupStudent.Presentation.Controllers
             private readonly IServiceManager _service;
             public StudentsController(IServiceManager service) => _service = service;
             
-            [HttpGet]
+            [HttpGet("/getallstudentsforgroup/")]
             public IActionResult GetStudentsForGroup(Guid GroupId)
             {
                 var students = _service.StudentService.GetStudents(GroupId, trackChanges:
@@ -27,7 +27,7 @@ namespace GroupStudent.Presentation.Controllers
             }
 
 
-            [HttpGet("{id:guid}", Name = "GetStudentForGroup")]
+            [HttpGet("/getstudentforgroup/{id:guid}", Name = "GetStudentForGroup")]
             public IActionResult GetstudentForGroup(Guid groupId, Guid id)
             {
                 var student = _service.StudentService.GetStudent(groupId, id,
@@ -36,7 +36,7 @@ namespace GroupStudent.Presentation.Controllers
 
 
             }
-            [HttpPost]
+            [HttpPost("/createstudentforgroup/")]
             public IActionResult CreateStudentForGroup(Guid GroupId, [FromBody] StudentForCreationDto student)
              {
 
@@ -49,7 +49,7 @@ namespace GroupStudent.Presentation.Controllers
             _service.StudentService.DeleteStudentForGroup(Groupid, id,trackChanges : false);
             return NoContent();
         }
-        [HttpPut("{id:guid}")]
+        [HttpPut("/updatestudent/{id:guid}")]
         public IActionResult UpdateStudentForGroup(Guid groupId, Guid id, [FromBody] StudentForUpdateDto student)
         {
             if (student == null)

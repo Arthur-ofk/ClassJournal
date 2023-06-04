@@ -1,0 +1,15 @@
+C:\Project\Services.Contracts\bin\Debug\net6.0\Services.Contracts.deps.json
+C:\Project\Services.Contracts\bin\Debug\net6.0\Services.Contracts.dll
+C:\Project\Services.Contracts\bin\Debug\net6.0\Services.Contracts.pdb
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.csproj.AssemblyReference.cache
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.AssemblyInfoInputs.cache
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.AssemblyInfo.cs
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.csproj.CoreCompileInputs.cache
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.csproj.CopyComplete
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.dll
+C:\Project\Services.Contracts\obj\Debug\net6.0\refint\Services.Contracts.dll
+C:\Project\Services.Contracts\obj\Debug\net6.0\Services.Contracts.pdb
+C:\Project\Services.Contracts\obj\Debug\net6.0\ref\Services.Contracts.dll
+C:\Project\Services.Contracts\bin\Debug\net6.0\Shared.dll
+C:\Project\Services.Contracts\bin\Debug\net6.0\Shared.pdb

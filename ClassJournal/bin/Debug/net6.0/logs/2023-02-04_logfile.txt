@@ -1,0 +1,112 @@
+2023-02-04 14:56:06.3932 ERROR Something went wrong in the GetAllGroups service method System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[Entities.Models.Group]' to type 'System.Collections.Generic.IEnumerable`1[Shared.DataTransferObject.GroupDto]'.
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 14:56:19.2412 ERROR Something went wrong in the GetAllGroups service method System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[Entities.Models.Group]' to type 'System.Collections.Generic.IEnumerable`1[Shared.DataTransferObject.GroupDto]'.
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:11:22.4311 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:11:22.4311 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:11:22.4311 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:11:24.7667 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:11:29.5984 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:14:08.4509 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:14:32.3281 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:15:39.4547 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:15:42.0025 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:16:19.1527 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:19:26.9972 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:20:13.8845 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:20:13.8845 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:20:26.7503 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges) in C:\Project\Services\GroupService.cs:line 32
+2023-02-04 15:22:12.8901 ERROR Something went wrong in the GetAllGroups service method AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GroupDto
+System.Collections.Generic.List`1[[Entities.Models.Group, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Shared.DataTransferObject.GroupDto
+   at lambda_method43(Closure , Object , GroupDto , ResolutionContext )
+   at Services.GroupService.GetAllGroups(Boolean trackChanges)

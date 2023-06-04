@@ -1,0 +1,17 @@
+C:\Project\GroupStudent.Presentation\bin\Debug\net6.0\GroupStudent.Presentation.deps.json
+C:\Project\GroupStudent.Presentation\bin\Debug\net6.0\GroupStudent.Presentation.dll
+C:\Project\GroupStudent.Presentation\bin\Debug\net6.0\GroupStudent.Presentation.pdb
+C:\Project\GroupStudent.Presentation\bin\Debug\net6.0\Services.Contracts.dll
+C:\Project\GroupStudent.Presentation\bin\Debug\net6.0\Services.Contracts.pdb
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.csproj.AssemblyReference.cache
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.AssemblyInfoInputs.cache
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.AssemblyInfo.cs
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.csproj.CoreCompileInputs.cache
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.csproj.CopyComplete
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.dll
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\refint\GroupStudent.Presentation.dll
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\GroupStudent.Presentation.pdb
+C:\Project\GroupStudent.Presentation\obj\Debug\net6.0\ref\GroupStudent.Presentation.dll
+C:\Project\GroupStudent.Presentation\bin\Debug\net6.0\Shared.dll
+C:\Project\GroupStudent.Presentation\bin\Debug\net6.0\Shared.pdb

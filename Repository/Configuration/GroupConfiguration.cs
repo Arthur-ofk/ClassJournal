@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Configuration
 {
-    internal class GroupConfiguration : IEntityTypeConfiguration<Group>
+    public class GroupConfiguration : IEntityTypeConfiguration<Group>
     {
      
         public void Configure(EntityTypeBuilder<Group> builder)

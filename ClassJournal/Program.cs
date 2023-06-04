@@ -12,6 +12,10 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 var connectionString = builder.Configuration.GetConnectionString("sqlConnection");
 builder.Services.AddDbContext<RepositoryContext>(x => x.UseSqlServer(connectionString));
+builder.Services.AddAuthentication();
+builder.Services.ConfigureIdentity();
+builder.Services.ConfigureJWT(builder.Configuration);
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -65,11 +69,13 @@ else
 app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
+
+
 app.UseSwagger();
 
-// Adds swagger UI
+
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "ClassJournal");

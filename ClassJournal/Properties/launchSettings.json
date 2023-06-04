@@ -1,31 +1,34 @@
 ﻿{
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:14805",
-      "sslPort": 44321
-    }
-  },
-  "profiles": {
-    "ClassJournal": {
-        "commandName": "Project",
-        "dotnetRunMessages": true,
-        "launchBrowser": true,
-        "launchUrl": "api/groups",
-        "applicationUrl": "https://localhost:5001",
-        "environmentVariables": {
-            "ASPNETCORE_ENVIRONMENT": "Development"
+    
+    "$schema": "https://json.schemastore.org/launchsettings.json",
+    "iisSettings": {
+        "windowsAuthentication": false,
+        "anonymousAuthentication": true,
+        "iisExpress": {
+            "applicationUrl": "http://localhost:14805",
+            "sslPort": 44321
         }
     },
-    "IIS Express": {
-        "commandName": "IISExpress",
-        "launchBrowser": true,
-        "launchUrl": "https://localhost:44321/swagger",
-        "environmentVariables": {
-            "ASPNETCORE_ENVIRONMENT": "Development"
+    "profiles": {
+        "ClassJournal": {
+            "commandName": "Project",
+            "dotnetRunMessages": true,
+            "launchBrowser": true,
+            "launchUrl": "api/groups",
+            "applicationUrl": "https://localhost:5001",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        "IIS Express": {
+            "commandName": "IISExpress",
+            "launchBrowser": true,
+
+            "launchUrl": "https://localhost:44321/swagger",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "SECRET": "ILoveEatingCakesILoveEatingCakes"
+            }
         }
     }
-  }
 }

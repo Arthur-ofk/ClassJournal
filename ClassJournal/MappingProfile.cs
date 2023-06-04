@@ -17,6 +17,7 @@ namespace ClassJournal
             CreateMap<GroupForCreationDto, Group>();
             CreateMap<StudentForCreationDto, Student>();
             CreateMap<StudentForUpdateDto, Student>();
+            CreateMap<UserForRegistrationDto, User>();
         }
     }
 }

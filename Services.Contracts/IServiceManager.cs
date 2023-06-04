@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Services.Contracts
 {
-    public  interface IServiceManager
+    public interface IServiceManager
     {
         IGroupService GroupService { get; }
         IStudentService StudentService { get; }
+        IAuthenticationService AutentificationService { get; }
     }
 }

@@ -33,7 +33,7 @@ namespace Services
                 var groups =
                 _repositoryManager.Group.GetAllGroups(trackChanges);
                 var groupsDto = _mapper.Map<IEnumerable<GroupDto>>(groups);
-                return (IEnumerable<GroupDto>)groupsDto;
+                return groupsDto;
             }
             catch (Exception ex)
             {

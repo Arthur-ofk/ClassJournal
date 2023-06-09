@@ -18,6 +18,7 @@ namespace Services
 
         private readonly Lazy<IStudentService> _studentService;
         private readonly Lazy<IAuthenticationService> _autentificationService;
+        private readonly Lazy<ISubjectService> _subjectService;
       
         public ServiceManager(IRepositoryManager repositoryManager, 
             ILoggerManager logger, 
@@ -32,6 +33,7 @@ namespace Services
             StudentService(repositoryManager, logger, mapper));
             _autentificationService = new Lazy<IAuthenticationService>(
                 () => new AuthenticationService(logger, mapper, userManager, configuration));
+            _subjectService = new Lazy<ISubjectService>(() => new SubjectService(repositoryManager, logger, mapper));
 
 
         }
@@ -39,5 +41,7 @@ namespace Services
         public IStudentService StudentService => _studentService.Value;
 
         public IAuthenticationService AutentificationService => _autentificationService.Value;
+
+        public ISubjectService SubjectService => _subjectService.Value;
     }
 }

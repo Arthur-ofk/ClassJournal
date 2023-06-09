@@ -16,17 +16,7 @@ namespace Repository
         {
         }
 
-        //public IEnumerable<Student> GetAllStudents(Guid groupId, bool trackChanges)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-
-
-        //public IEnumerable<Student> GetAllStudents(bool trackChanges) =>
-        //FindAll(trackChanges)
-        // .OrderBy(c => c.StudentName)
-        // .ToList();
+      
 
         public IEnumerable<Student> GetStudents(Guid groupId, bool trackChanges) =>
               FindByCondition(e => e.GroupId.Equals(groupId), trackChanges)

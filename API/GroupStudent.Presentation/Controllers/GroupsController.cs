@@ -31,7 +31,7 @@ namespace GroupStudent.Presentation.Controllers
             }
         }
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public IActionResult GetAllGroups()
         {
             try

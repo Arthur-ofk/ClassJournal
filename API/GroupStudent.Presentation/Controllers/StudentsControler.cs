@@ -41,7 +41,7 @@ namespace GroupStudent.Presentation.Controllers
              {
 
                var studentToReturn = _service.StudentService.CreateStudentForGroup(GroupId, student, trackChanges: false);
-               return CreatedAtRoute("CreateStudentForGroup", new { GroupId, id = studentToReturn.Id }, studentToReturn);
+            return Ok(studentToReturn);
              }
             [HttpDelete("{id:guid}")]
             public IActionResult DeleteStudentForGroup(Guid Groupid, Guid id)

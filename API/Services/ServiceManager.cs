@@ -19,6 +19,7 @@ namespace Services
         private readonly Lazy<IStudentService> _studentService;
         private readonly Lazy<IAuthenticationService> _autentificationService;
         private readonly Lazy<ISubjectService> _subjectService;
+        private readonly Lazy<IMarkService> _markService;
       
         public ServiceManager(IRepositoryManager repositoryManager, 
             ILoggerManager logger, 
@@ -32,8 +33,11 @@ namespace Services
             _studentService = new Lazy<IStudentService>(() => new
             StudentService(repositoryManager, logger, mapper));
             _autentificationService = new Lazy<IAuthenticationService>(
-                () => new AuthenticationService(logger, mapper, userManager, configuration));
-            _subjectService = new Lazy<ISubjectService>(() => new SubjectService(repositoryManager, logger, mapper));
+            () => new AuthenticationService(logger, mapper, userManager, configuration));
+            _subjectService = new Lazy<ISubjectService>(() => new
+            SubjectService(repositoryManager, logger, mapper));
+            _markService = new Lazy<IMarkService>(()=> new
+            MarkService(repositoryManager, logger, mapper));
 
 
         }
@@ -43,5 +47,6 @@ namespace Services
         public IAuthenticationService AutentificationService => _autentificationService.Value;
 
         public ISubjectService SubjectService => _subjectService.Value;
+        public IMarkService MarkService => _markService.Value;
     }
 }

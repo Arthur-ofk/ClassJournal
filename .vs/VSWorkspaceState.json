@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\API",
+    "\\API\\ClassJournal",
+    "\\API\\GroupStudent.Presentation",
+    "\\API\\GroupStudent.Presentation\\Controllers"
   ],
-  "SelectedNode": "\\ClassJournal.sln",
+  "SelectedNode": "\\API\\ClassJournal\\ClassJournal.sln",
   "PreviewInSolutionExplorer": false
 }

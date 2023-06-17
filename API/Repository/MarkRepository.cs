@@ -13,5 +13,12 @@ namespace Repository
         public MarkRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
+
+        public void CreateMark(Mark mark)
+        {
+            
+            Create(mark);
+            
+        }
     }
 }

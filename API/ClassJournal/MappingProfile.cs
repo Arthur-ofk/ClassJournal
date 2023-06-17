@@ -20,6 +20,8 @@ namespace ClassJournal
             CreateMap<UserForRegistrationDto, User>();
             CreateMap<SubjectForCreationDto, Subject >();
             CreateMap<Subject, SubjectDto>();
+            CreateMap<MarkForCreationDto,Mark >();
+            CreateMap<Mark, MarkDto>();
         }
     }
 }

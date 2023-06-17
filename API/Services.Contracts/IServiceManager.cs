@@ -12,5 +12,6 @@ namespace Services.Contracts
         IStudentService StudentService { get; }
         IAuthenticationService AutentificationService { get; }
         ISubjectService SubjectService { get; }
+        IMarkService MarkService { get; }
     }
 }

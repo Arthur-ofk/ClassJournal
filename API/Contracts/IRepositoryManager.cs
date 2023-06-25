@@ -2,14 +2,14 @@
 {
     public interface IRepositoryManager
     {
-        
-         IGroupRepository Group { get; }
+
+        IGroupRepository Group { get; }
         IStudentRepository Student { get; }
         IMarkRepository Mark { get; }
 
         ISubjectRepository Subject { get; }
 
-        
+
 
 
         void Save();

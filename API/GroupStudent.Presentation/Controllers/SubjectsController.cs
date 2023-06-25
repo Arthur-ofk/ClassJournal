@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Shared.DataTransferObject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GroupStudent.Presentation.Controllers
 {
@@ -17,21 +12,21 @@ namespace GroupStudent.Presentation.Controllers
         public SubjectsController(IServiceManager service) => _service = service;
 
         [HttpPost]
-        public  IActionResult CreateSubject([FromBody] SubjectForCreationDto subjectDto)
+        public IActionResult CreateSubject([FromBody] SubjectForCreationDto subjectDto)
         {
-             var subject =  _service.SubjectService.CreateSubject(subjectDto, trackChanges : false);
+            var subject = _service.SubjectService.CreateSubject(subjectDto, trackChanges: false);
             return Ok(subject);
         }
         [HttpGet]
         public IActionResult GetAllSubjects()
         {
-           var subjects =  _service.SubjectService.GetSubjects(trackChanges: false);
-            if(subjects == null)
+            var subjects = _service.SubjectService.GetSubjects(trackChanges: false);
+            if (subjects == null)
             {
                 return BadRequest();
             }
             else { return Ok(subjects); }
-            
+
         }
         [HttpGet("/GetSubjectsByName/{name}")]
         public IActionResult GetSubjectsByName(string name)

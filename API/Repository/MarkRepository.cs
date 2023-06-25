@@ -20,5 +20,22 @@ namespace Repository
             Create(mark);
             
         }
+
+        public void DeleteMark(Mark mark)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Mark> GetAllMarksForStudent(Guid StudentId, bool TrackChanges)
+        {
+            return FindByCondition(x => x.StudentId.Equals(StudentId), TrackChanges).ToList();
+        }
+
+        public IEnumerable<Mark> GetSubjectMarksForStudent(Guid StudentId, Guid SubjectId, bool TrackChanges)
+        {
+            return FindByCondition(x =>
+            x.StudentId.Equals(StudentId), TrackChanges)
+            .Where(x => x.SubjectId.Equals(SubjectId)).ToList();
+        }
     }
 }

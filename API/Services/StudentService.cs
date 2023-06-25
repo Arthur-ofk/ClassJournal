@@ -74,8 +74,8 @@ namespace Services
 
         public void UpdateStudentForGroup(Guid groupId, Guid id, StudentForUpdateDto studentForUpdate, bool grTrackChanges, bool stTrackChanges)
         {
-            var company = _repository.Group.GetGroup(groupId, grTrackChanges);
-            if (company == null)
+            var group = _repository.Group.GetGroup(groupId, grTrackChanges);
+            if (group == null)
             {
                 throw new InvalidDataException();
             }

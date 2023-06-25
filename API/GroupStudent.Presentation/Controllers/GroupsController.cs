@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Shared.DataTransferObject;
@@ -22,7 +17,7 @@ namespace GroupStudent.Presentation.Controllers
             try
             {
                 var groups =
-                _service.GroupService.GetGroup(id,trackChanges: false);
+                _service.GroupService.GetGroup(id, trackChanges: false);
                 return Ok(groups);
             }
             catch
@@ -31,13 +26,13 @@ namespace GroupStudent.Presentation.Controllers
             }
         }
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+
         public IActionResult GetAllGroups()
         {
             try
             {
                 var groups =
-                _service.GroupService.GetAllGroups( trackChanges: false);
+                _service.GroupService.GetAllGroups(trackChanges: false);
                 return Ok(groups);
             }
             catch
@@ -45,14 +40,15 @@ namespace GroupStudent.Presentation.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-        //[HttpGet("{id:guid}", Name = "GroupById")]
+
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult CreateGroup([FromBody] GroupForCreationDto group)
         {
-            
+
             var createdGroup = _service.GroupService.CreateGroup(group);
             return Ok(createdGroup);
-            
+
         }
         [HttpGet("collection/({ids})", Name = "GroupCollection")]
         public IActionResult GetGroupCollection(IEnumerable<Guid> ids)
@@ -67,15 +63,15 @@ namespace GroupStudent.Presentation.Controllers
             var result =
             _service.GroupService.CreateGroupCollection(companyCollection);
             return Ok(result);
-            
+
         }
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteGroup(Guid id )
+        public IActionResult DeleteGroup(Guid id)
         {
-            _service.GroupService.DeleteGroup(id , trackChanges : false);
+            _service.GroupService.DeleteGroup(id, trackChanges: false);
             return NoContent();
         }
-       
+
     }
 
 }

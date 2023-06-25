@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Contracts;
 using Entities.Models;
 using Microsoft.AspNetCore.Identity;
@@ -20,9 +15,9 @@ namespace Services
         private readonly Lazy<IAuthenticationService> _autentificationService;
         private readonly Lazy<ISubjectService> _subjectService;
         private readonly Lazy<IMarkService> _markService;
-      
-        public ServiceManager(IRepositoryManager repositoryManager, 
-            ILoggerManager logger, 
+
+        public ServiceManager(IRepositoryManager repositoryManager,
+            ILoggerManager logger,
             IMapper mapper,
             UserManager<User> userManager,
             IConfiguration configuration)
@@ -36,10 +31,8 @@ namespace Services
             () => new AuthenticationService(logger, mapper, userManager, configuration));
             _subjectService = new Lazy<ISubjectService>(() => new
             SubjectService(repositoryManager, logger, mapper));
-            _markService = new Lazy<IMarkService>(()=> new
+            _markService = new Lazy<IMarkService>(() => new
             MarkService(repositoryManager, logger, mapper));
-
-
         }
         public IGroupService GroupService => _groupService.Value;
         public IStudentService StudentService => _studentService.Value;

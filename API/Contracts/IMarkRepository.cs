@@ -1,15 +1,12 @@
 ﻿using Entities.Models;
-using Shared.DataTransferObject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Contracts
 {
     public interface IMarkRepository
     {
-       void CreateMark(Mark mark);
+        void CreateMark(Mark mark);
+        IEnumerable<Mark> GetAllMarksForStudent(Guid StudentId, bool TrackChanges);
+        IEnumerable<Mark> GetSubjectMarksForStudent(Guid StudentId, Guid SubjectId, bool TrackChanges);
+        void DeleteMark(Mark mark);
     }
 }

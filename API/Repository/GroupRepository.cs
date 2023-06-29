@@ -31,12 +31,12 @@ namespace Repository
 
         public IEnumerable<Group> GetbyIds(IEnumerable<Guid> ids, bool trackChanges) =>
             FindByCondition(x => ids.Contains(x.Id), trackChanges).ToList();
-        
 
-        public Group GetGroup(Guid groupId, bool trackChanges)=>
-        
-            FindByCondition(c => c.Id.Equals(groupId) , trackChanges)
+
+        public Group? GetGroup(Guid groupId, bool trackChanges)
+        {
+            return FindByCondition(c => c.Id.Equals(groupId), trackChanges)
             .SingleOrDefault();
-        
+        }
     }
 }

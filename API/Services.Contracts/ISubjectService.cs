@@ -11,6 +11,7 @@ namespace Services.Contracts
     {
         SubjectDto CreateSubject(SubjectForCreationDto subject, bool trackChanges); 
         IEnumerable<SubjectDto> GetSubjects(bool trackChanges);
-        IEnumerable<SubjectDto> GetSubjectsByName(string name, bool trackChanges);
+        IEnumerable<SubjectDto> GetSubjectsById(Guid Id, bool trackChanges);
+        void DeleteSubject(Guid subjectId,bool trackChanges);
     }
 }

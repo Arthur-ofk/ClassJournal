@@ -12,5 +12,7 @@ namespace Services.Contracts
         MarkDto CreateMark(MarkForCreationDto markForCreation , bool trackChanges);
         IEnumerable<MarkDto> GetAllMarksForStudent( Guid StudentId, bool trackChanges);
         IEnumerable<MarkDto> GetSubjectMarksForStudents( Guid StudentId,Guid SubjectId, bool trackChanges);
+        MarkDto GetMarkById(Guid Id, bool trackChanges);
+        void DeleteMarkForStudent(Guid markId,bool trackChanges);
     }
 }

@@ -19,16 +19,18 @@ namespace Repository
           Create(subject);
         }
 
+        public void DeleteSubject(Subject subject, bool trackChanges) => Delete(subject);
+        
+
         public IEnumerable<Subject> GetAllSubjects(bool trackChanges) =>
             FindAll(trackChanges).OrderBy(o => o.SubjectName).ToList();
 
-        public IEnumerable<Subject> GetSubjectsByName(string Name, bool trackChanges)
+        public Subject? GetSubjectsById(Guid Id, bool trackChanges)
         {
-            var subjects = FindByCondition(o => o.SubjectName == Name, trackChanges).OrderBy(o => o.SubjectName).ToList();
+            var subjects = FindByCondition(o => o.Id == Id, trackChanges).SingleOrDefault();
             return subjects;
         }
 
-       
        
     }
 }

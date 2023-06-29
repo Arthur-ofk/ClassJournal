@@ -22,9 +22,11 @@ namespace Repository
               FindByCondition(e => e.GroupId.Equals(groupId), trackChanges)
               .OrderBy(e => e.StudentName).ToList();
 
-        public Student GetStudent(Guid groupId, Guid id, bool trackChanges) =>
-            FindByCondition(c => c.GroupId.Equals(groupId) && c.Id.Equals(id), trackChanges)
+        public Student? GetStudent(Guid groupId, Guid id, bool trackChanges)
+        {
+            return FindByCondition(c => c.GroupId.Equals(groupId) && c.Id.Equals(id), trackChanges)
             .SingleOrDefault();
+        }
 
         public void CreateStudentForGroup(Guid groupId, Student student)
         {

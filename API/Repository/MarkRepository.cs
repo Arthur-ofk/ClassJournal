@@ -21,14 +21,17 @@ namespace Repository
             
         }
 
-        public void DeleteMark(Mark mark)
-        {
-            throw new NotImplementedException();
-        }
+        public void DeleteMark(Mark mark)=>Delete(mark);
+       
 
         public IEnumerable<Mark> GetAllMarksForStudent(Guid StudentId, bool TrackChanges)
         {
             return FindByCondition(x => x.StudentId.Equals(StudentId), TrackChanges).ToList();
+        }
+
+        public Mark GetMarkById(Guid Id, bool TrackChanges)
+        {
+            return FindByCondition(o => o.Id == Id, TrackChanges).SingleOrDefault();
         }
 
         public IEnumerable<Mark> GetSubjectMarksForStudent(Guid StudentId, Guid SubjectId, bool TrackChanges)

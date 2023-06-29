@@ -31,6 +31,18 @@ namespace GroupStudent.Presentation.Controllers
             var marks = _serviceManager.MarkService.GetAllMarksForStudent(StudentId, trackChanges: false);
             return Ok(marks);
         }
+        [HttpGet("(SubjectId)")]
+        public IActionResult GetMarkById(Guid SubjectId)
+        {
+           var mark = _serviceManager.MarkService.GetMarkById(SubjectId, trackChanges: false);
+            return Ok(mark);
+        }
+        [HttpDelete("(MarkId)")]
+        public IActionResult DeleteMarkById(Guid MarkId)
+        {
+            _serviceManager.MarkService.DeleteMarkForStudent(MarkId, trackChanges: false);
+            return NoContent();
+        }
 
     }
 }

@@ -5,8 +5,10 @@ namespace Entities.Models
     public class User : IdentityUser
     {
 
-        public string Name { get; set; }
-        public string LastName { get; set; }
+        public string? Name { get; set; }
+        public string? LastName { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpireTime { get; set; }
 
     }
 }

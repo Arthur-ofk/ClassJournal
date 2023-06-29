@@ -35,6 +35,14 @@ namespace Services
 
         }
 
+
+        public void DeleteMarkForStudent(Guid markId, bool trackChanges)
+        {
+            var markForDelete = _repositoryManager.Mark.GetMarkById(markId, trackChanges);
+            _repositoryManager.Mark.DeleteMark(markForDelete);
+            _repositoryManager.Save();
+        }
+
         public IEnumerable<MarkDto> GetAllMarksForStudent(Guid StudentId, bool trackChanges)
         {
             var marks = _repositoryManager.Mark.GetAllMarksForStudent(StudentId, trackChanges);
@@ -44,6 +52,12 @@ namespace Services
             }
             var marksToReturn = _mapper.Map<IEnumerable<MarkDto>>(marks);
             return marksToReturn;
+        }
+
+        public MarkDto GetMarkById(Guid Id, bool trackChanges)
+        {
+           var mark = _repositoryManager.Mark.GetMarkById(Id,trackChanges);
+           return  _mapper.Map<MarkDto>(mark);
         }
 
         public IEnumerable<MarkDto> GetSubjectMarksForStudents(Guid StudentId, Guid SubjectId, bool trackChanges)

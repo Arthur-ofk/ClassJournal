@@ -9,7 +9,7 @@ namespace Shared.DataTransferObject
 {
     public  record UserForRegistrationDto
     {
-        //public string UserRegistrationId { get; set; }
+      
         public string? Name { get; init; }
         public string? LastName { get; init; }
         [Required(ErrorMessage = "Login is required")]

@@ -34,6 +34,14 @@ namespace Services
             return subjectToreturn;
         }
 
+        public void DeleteSubject(Guid subjectId, bool trackChanges)
+        {
+            var subjectForDelete = _repositoryManager.Subject.GetSubjectsById(subjectId, trackChanges);
+            _repositoryManager.Subject.DeleteSubject(subjectForDelete,trackChanges);
+            _repositoryManager.Save();
+
+        }
+
         public IEnumerable<SubjectDto> GetSubjects(bool trackChanges)
         {
             var subjects = _repositoryManager.Subject.GetAllSubjects(trackChanges);
@@ -41,9 +49,9 @@ namespace Services
             return subjectsToGet;
         }
 
-        public IEnumerable<SubjectDto> GetSubjectsByName(string name, bool trackChanges)
+        public IEnumerable<SubjectDto> GetSubjectsById(Guid Id, bool trackChanges)
         {
-            var subjects = _repositoryManager.Subject.GetSubjectsByName(name, trackChanges);
+            var subjects = _repositoryManager.Subject.GetSubjectsById(Id, trackChanges);
             var subjectsforReturn = _mapper.Map<IEnumerable<SubjectDto>>(subjects);
             return subjectsforReturn;
         }

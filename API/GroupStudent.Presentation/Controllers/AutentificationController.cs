@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Shared.DataTransferObject;
+using System.ComponentModel.DataAnnotations;
 
 namespace GroupStudent.Presentation.Controllers
 {
@@ -29,6 +30,7 @@ namespace GroupStudent.Presentation.Controllers
             return StatusCode(201);
         }
         [HttpPost("login")]
+        [ServiceFilter(typeof(ValidationAttribute))]
         public async Task<IActionResult> Autenticate([FromBody] UserForAuthenticationDto user)
         {
             if (!await _service.AutentificationService.ValidateUser(user))
@@ -37,7 +39,8 @@ namespace GroupStudent.Presentation.Controllers
             }
             else
             {
-                return Ok(new { Token = await _service.AutentificationService.CreateToken() });
+                var tokenDto = await _service.AutentificationService.CreateToken(populateExp: true);
+                return Ok(tokenDto);
             }
         }
     }

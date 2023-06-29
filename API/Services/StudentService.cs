@@ -44,7 +44,7 @@ namespace Services
         }
         public StudentDto GetStudent(Guid groupId, Guid id, bool trackChanges)
         {
-            //var company = _repository.Group.GetGroup(groupId, trackChanges);
+           
 
             var studentDb = _repository.Student.GetStudent(groupId, id, trackChanges);
 

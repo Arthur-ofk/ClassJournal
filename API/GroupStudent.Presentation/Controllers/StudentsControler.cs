@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Shared.DataTransferObject;
+using System.Data;
 
 namespace GroupStudent.Presentation.Controllers
 {
@@ -14,6 +16,7 @@ namespace GroupStudent.Presentation.Controllers
         public StudentsController(IServiceManager service) => _service = service;
 
         [HttpGet]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult GetStudentsForGroup(Guid GroupId)
         {
             var students = _service.StudentService.GetStudents(GroupId, trackChanges:
@@ -23,6 +26,7 @@ namespace GroupStudent.Presentation.Controllers
 
 
         [HttpGet("{id:guid}", Name = "GetStudentForGroup")]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult GetstudentForGroup(Guid groupId, Guid id)
         {
             var student = _service.StudentService.GetStudent(groupId, id,
@@ -32,6 +36,7 @@ namespace GroupStudent.Presentation.Controllers
 
         }
         [HttpPost]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult CreateStudentForGroup(Guid GroupId, [FromBody] StudentForCreationDto student)
         {
 
@@ -39,17 +44,19 @@ namespace GroupStudent.Presentation.Controllers
             return Ok(studentToReturn);
         }
         [HttpDelete("{id:guid}")]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult DeleteStudentForGroup(Guid Groupid, Guid id)
         {
             _service.StudentService.DeleteStudentForGroup(Groupid, id, trackChanges: false);
             return NoContent();
         }
         [HttpPut("{id:guid}")]
+        [Authorize(Roles = "Teacher, Admin, Student")]
         public IActionResult UpdateStudentForGroup(Guid GroupId, Guid id, [FromBody] StudentForUpdateDto student)
         {
             if (student == null)
             {
-                return BadRequest("EmployeeForUpdateDto object is null");
+                return BadRequest("StudentForUpdateDto object is null");
             }
             _service.StudentService.UpdateStudentForGroup(GroupId, id, student, grTrackChanges: false, stTrackChanges: true);
             return NoContent();

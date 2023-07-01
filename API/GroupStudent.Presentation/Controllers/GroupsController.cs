@@ -12,6 +12,7 @@ namespace GroupStudent.Presentation.Controllers
         private readonly IServiceManager _service;
         public GroupsController(IServiceManager service) => _service = service;
         [HttpGet("/getgroupbyid/{id}")]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult GetGroup(Guid id)
         {
             try
@@ -26,7 +27,7 @@ namespace GroupStudent.Presentation.Controllers
             }
         }
         [HttpGet]
-
+        [Authorize(Roles = "Teacher, Admin, Student")]
         public IActionResult GetAllGroups()
         {
             try
@@ -42,7 +43,7 @@ namespace GroupStudent.Presentation.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult CreateGroup([FromBody] GroupForCreationDto group)
         {
 
@@ -51,12 +52,14 @@ namespace GroupStudent.Presentation.Controllers
 
         }
         [HttpGet("collection/({ids})", Name = "GroupCollection")]
+        [Authorize(Roles = "Teacher, Admin, Student")]
         public IActionResult GetGroupCollection(IEnumerable<Guid> ids)
         {
             var groups = _service.GroupService.GetByIds(ids, trackChanges: false);
             return Ok(groups);
         }
         [HttpPost("collection")]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult CreateGroupCollection([FromBody]
              IEnumerable<GroupForCreationDto> companyCollection)
         {
@@ -66,6 +69,7 @@ namespace GroupStudent.Presentation.Controllers
 
         }
         [HttpDelete("{id:guid}")]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult DeleteGroup(Guid id)
         {
             _service.GroupService.DeleteGroup(id, trackChanges: false);

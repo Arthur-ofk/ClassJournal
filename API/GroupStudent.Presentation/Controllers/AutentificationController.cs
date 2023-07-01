@@ -30,7 +30,7 @@ namespace GroupStudent.Presentation.Controllers
             return StatusCode(201);
         }
         [HttpPost("login")]
-        [ServiceFilter(typeof(ValidationAttribute))]
+        
         public async Task<IActionResult> Autenticate([FromBody] UserForAuthenticationDto user)
         {
             if (!await _service.AutentificationService.ValidateUser(user))

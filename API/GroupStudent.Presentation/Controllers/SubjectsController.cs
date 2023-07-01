@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Shared.DataTransferObject;
+using System.Data;
 
 namespace GroupStudent.Presentation.Controllers
 {
@@ -12,12 +14,14 @@ namespace GroupStudent.Presentation.Controllers
         public SubjectsController(IServiceManager service) => _service = service;
 
         [HttpPost]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult CreateSubject([FromBody] SubjectForCreationDto subjectDto)
         {
             var subject = _service.SubjectService.CreateSubject(subjectDto, trackChanges: false);
             return Ok(subject);
         }
         [HttpGet]
+        [Authorize(Roles = "Teacher, Admin, Student")]
         public IActionResult GetAllSubjects()
         {
             var subjects = _service.SubjectService.GetSubjects(trackChanges: false);
@@ -28,10 +32,11 @@ namespace GroupStudent.Presentation.Controllers
             else { return Ok(subjects); }
 
         }
-        [HttpGet("/GetSubjectsByName/{name}")]
-        public IActionResult GetSubjectsByName(string name)
+        [HttpGet("/GetSubjectsById/{SubjectId}")]
+        [Authorize(Roles = "Teacher, Admin, Student")]
+        public IActionResult GetSubjectsById(Guid SubjectId)
         {
-            var subjects = _service.SubjectService.GetSubjectsByName(name, trackChanges: false);
+            var subjects = _service.SubjectService.GetSubjectsById(SubjectId, trackChanges: false);
             if (subjects == null)
             {
                 return BadRequest();

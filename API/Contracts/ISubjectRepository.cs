@@ -6,7 +6,7 @@ namespace Contracts
     {
         void CreateSubject(Subject subject);
         IEnumerable<Subject>? GetAllSubjects(bool trackChanges);
-        Subject? GetSubjectsById(Guid Id, bool trackChanges);
+        Subject? GetSubjectById(Guid Id, bool trackChanges);
 
         void DeleteSubject(Subject subject, bool trackChanges);
     }

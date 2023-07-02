@@ -14,7 +14,7 @@ namespace Entities.Models
         [MaxLength(60, ErrorMessage = "Maximum length for the Course is 60 characters")]
 
         public int GroupCourse { get; set; }
-        public ICollection<Student> Students { get; set; }
+        public ICollection<Student>? Students { get; set; }
 
     }
 }

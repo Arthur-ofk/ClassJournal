@@ -36,12 +36,20 @@ namespace GroupStudent.Presentation.Controllers
         [Authorize(Roles = "Teacher, Admin, Student")]
         public IActionResult GetSubjectsById(Guid SubjectId)
         {
-            var subjects = _service.SubjectService.GetSubjectsById(SubjectId, trackChanges: false);
+            var subjects = _service.SubjectService.GetSubjectById(SubjectId, trackChanges: false);
             if (subjects == null)
             {
                 return BadRequest();
             }
             else { return Ok(subjects); }
         }
+        [HttpDelete("/DeleteSubject/{SubjectId}")]
+        [Authorize(Roles = "Teacher, Admin")]
+        public IActionResult DeleteSubjectById(Guid SubjectId)
+        {
+            _service.SubjectService.DeleteSubject(SubjectId, trackChanges: false);
+            return NoContent();
+        }
+
     }
 }

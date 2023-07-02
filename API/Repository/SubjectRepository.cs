@@ -25,7 +25,7 @@ namespace Repository
         public IEnumerable<Subject> GetAllSubjects(bool trackChanges) =>
             FindAll(trackChanges).OrderBy(o => o.SubjectName).ToList();
 
-        public Subject? GetSubjectsById(Guid Id, bool trackChanges)
+        public Subject? GetSubjectById(Guid Id, bool trackChanges)
         {
             var subjects = FindByCondition(o => o.Id == Id, trackChanges).SingleOrDefault();
             return subjects;

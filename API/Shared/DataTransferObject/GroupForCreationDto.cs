@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Shared.DataTransferObject
 {
-    public record GroupForCreationDto(string GroupName,int GroupCourse, IEnumerable<StudentForCreationDto> Students);
+    public record GroupForCreationDto(string GroupName,int GroupCourse);
     
 }

@@ -22,10 +22,10 @@ namespace GroupStudent.Presentation.Controllers
             return Ok(markToreturn);
         }
         [Authorize(Roles = "Teacher, Admin, Student")]
-        [HttpGet("studentMarks/({StudentId:guid})/({markId:guid})")]
-        public IActionResult GetSubjectMarksForStudent(Guid StudentId, Guid markId)
+        [HttpGet("studentMarks/({StudentId:guid})/({SubjectId:guid})")]
+        public IActionResult GetSubjectMarksForStudent(Guid StudentId, Guid SubjectId)
         {
-            var subjectMarks = _serviceManager.MarkService.GetSubjectMarksForStudents(StudentId, markId, trackChanges: false);
+            var subjectMarks = _serviceManager.MarkService.GetSubjectMarksForStudents(StudentId, SubjectId, trackChanges: false);
             return Ok(subjectMarks);
         }
         [HttpGet("({StudentId:guid})")]
@@ -35,11 +35,11 @@ namespace GroupStudent.Presentation.Controllers
             var marks = _serviceManager.MarkService.GetAllMarksForStudent(StudentId, trackChanges: false);
             return Ok(marks);
         }
-        [HttpGet("(SubjectId)")]
+        [HttpGet("(MarkId)")]
         [Authorize(Roles = "Teacher, Admin")]
-        public IActionResult GetMarkById(Guid SubjectId)
+        public IActionResult GetMarkById(Guid MarkId)
         {
-           var mark = _serviceManager.MarkService.GetMarkById(SubjectId, trackChanges: false);
+           var mark = _serviceManager.MarkService.GetMarkById(MarkId, trackChanges: false);
             return Ok(mark);
         }
         [HttpDelete("(MarkId)")]
